@@ -143,6 +143,33 @@ public class ResTest {
 
     
   }
+  /**
+   * 
+   * Test for the GETtestidnotfoundtest_ID611263 method.
+   * 
+   */
+  @Test
+  public void testGETtestidnotfoundtest_ID611263() {
+    MiniClientCoverage c = new MiniClientCoverage(mainPath);
+    c.setConnectorEndpoint(connector.getHttpEndpoint());
+    
+        
+    try {
+      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
+      ClientResponse result = c.sendRequest("GET", "/test/{id}", """
+""", "text/plain", "*/*", new HashMap<>(), "10");
+      System.out.println("Result of request with id: 671583: " + result.getResponse().trim());
+    
+      Assert.assertEquals("[348411]", 404, result.getHttpCode());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+    
+
+    
+  }
 
 
 
