@@ -102,7 +102,8 @@ public class Res extends RESTService {
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
   @ApiResponses(value = {
-       @ApiResponse(code = HttpURLConnection.HTTP_BAD_REQUEST, message = "badreq")
+       @ApiResponse(code = HttpURLConnection.HTTP_BAD_REQUEST, message = "badreq"),
+       @ApiResponse(code = HttpURLConnection.HTTP_CREATED, message = "created")
   })
   @ApiOperation(value = "posttest", notes = " ")
   public Response posttest(String body) {
@@ -127,6 +128,15 @@ public class Res extends RESTService {
       
 
       return Response.status(HttpURLConnection.HTTP_BAD_REQUEST).entity(bvad.toJSONString()).build();
+    }
+    // created
+    boolean created_condition = true;
+    if(created_condition) {
+      JSONObject created = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_CREATED).entity(created.toJSONString()).build();
     }
     return null;
   }
