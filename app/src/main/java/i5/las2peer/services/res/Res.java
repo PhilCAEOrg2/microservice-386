@@ -135,7 +135,7 @@ public class Res extends RESTService {
    * ge
    *
    * 
-   * @param id  a JSONObject
+   * @param id  a String
    * 
    * @return Response 
    * 
@@ -143,13 +143,12 @@ public class Res extends RESTService {
   @GET
   @Path("/test/{id}")
   @Produces(MediaType.APPLICATION_JSON)
-  @Consumes(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
   @ApiResponses(value = {
        @ApiResponse(code = HttpURLConnection.HTTP_NOT_FOUND, message = "res2")
   })
   @ApiOperation(value = "ge", notes = " ")
-  public Response ge(String id) {
-    JSONObject id_JSON = (JSONObject) JSONValue.parse(id);
+  public Response ge(@PathParam("id") String id) {
 
 
 
