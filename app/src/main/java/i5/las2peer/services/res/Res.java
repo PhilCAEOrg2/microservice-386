@@ -89,6 +89,50 @@ public class Res extends RESTService {
 
       /**
    * 
+   * posttest
+   *
+   * 
+   * @param body  a JSONObject
+   * 
+   * @return Response 
+   * 
+   */
+  @POST
+  @Path("/test")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.APPLICATION_JSON)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_BAD_REQUEST, message = "badreq")
+  })
+  @ApiOperation(value = "posttest", notes = " ")
+  public Response posttest(String body) {
+    JSONObject body_JSON = (JSONObject) JSONValue.parse(body);
+
+
+
+
+     
+    // service method invocations
+
+     
+
+
+
+
+    // badreq
+    boolean badreq_condition = true;
+    if(badreq_condition) {
+      JSONObject bvad = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_BAD_REQUEST).entity(bvad.toJSONString()).build();
+    }
+    return null;
+  }
+
+  /**
+   * 
    * gettest
    *
    * 
