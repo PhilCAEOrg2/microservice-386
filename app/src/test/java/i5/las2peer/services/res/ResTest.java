@@ -143,33 +143,6 @@ public class ResTest {
 
     
   }
-  /**
-   * 
-   * Test for the SimpleGETtesttest_ID222372 method.
-   * 
-   */
-  @Test
-  public void testSimpleGETtesttest_ID222372() {
-    MiniClientCoverage c = new MiniClientCoverage(mainPath);
-    c.setConnectorEndpoint(connector.getHttpEndpoint());
-    
-        
-    try {
-      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
-      ClientResponse result = c.sendRequest("GET", "/test", """
-""", "text/plain", "*/*", new HashMap<>(), new Object[0]);
-      System.out.println("Result of request with id: 623341: " + result.getResponse().trim());
-    
-      Assert.assertEquals("[306168]", 200, result.getHttpCode());
-
-    } catch (Exception e) {
-      e.printStackTrace();
-      fail("Exception: " + e);
-    }
-    
-
-    
-  }
 
 
 
